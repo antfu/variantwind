@@ -28,6 +28,21 @@ app.directive("class", directive);
 app.mount("#app");
 ```
 
+Or register as a Plugin
+
+```js
+import { createApp } from "vue";
+import App from "./App.vue";
+import Variantwind from "variantwind";
+
+let app = createApp(App);
+
+// Second argument is directive name (optional) default: "variantwind"
+app.use(Variantwind, "variantwind");
+
+app.mount("#app");
+```
+
 ```html
 <template>
   <div

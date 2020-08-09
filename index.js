@@ -27,3 +27,7 @@ export const extractor = (content) => {
     .filter((item) => !!item)
     .flatMap((classes) => cls(classes).trim().split(" "));
 };
+
+export default (app, directiveName) => {
+  app.directive(directiveName, directive);
+};
