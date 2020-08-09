@@ -3,14 +3,15 @@ export function variantwind(className) {
   const blocks = className.match(/\w*:\{(.*?)\}/g);
 
   let plainClasses = className;
+
   const processedClasses = blocks
     .map((block) => {
-      plainClasses = plainClasses.replace(block, "");
+      plainClasses = plainClasses.replace(block, "").trim();
       const [variant, classes] = block.split(/:(.+)/);
 
       const withVariants = classes
         .replace(/\{|\}/g, "")
-        .replace(/\s/g, " " + variant + ":");
+        .replace(" ", " " + variant + ":");
 
       return withVariants.startsWith(variant)
         ? withVariants
@@ -18,7 +19,7 @@ export function variantwind(className) {
     })
     .join(" ");
 
-  return plainClasses.trim() + " " + processedClasses;
+  return plainClasses + " " + processedClasses;
 }
 
 export const directive = {
