@@ -21,7 +21,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { directive } from "variantwind";
 
-let app = createApp(App);
+const app = createApp(App);
 
 app.directive("variantwind", directive);
 
@@ -35,7 +35,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import Variantwind from "variantwind";
 
-let app = createApp(App);
+const app = createApp(App);
 
 // Second argument is directive name (optional) default: "variantwind"
 app.use(Variantwind, "variantwind");
@@ -59,7 +59,7 @@ app.mount("#app");
 ```html
 <template>
   <div
-    :class="variantwind`w-full bg-red-500 md:{w-1/3 bg-blue-500} lg:{w-1/4 bg-yellow-500} hover:{bg-green-500}`"
+    :class="variantwind('w-full bg-red-500 md:{w-1/3 bg-blue-500} lg:{w-1/4 bg-yellow-500} hover:{bg-green-500}')"
   >
     Hello world
   </div>

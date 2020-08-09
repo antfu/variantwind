@@ -1,17 +1,24 @@
 export function variantwind(className) {
-  className = Array.isArray(className) ? className[0] : className;
-  let result = className.match(/\w*:\{(.*?)\}/g);
-  result = result
-    .map((cls) => {
-      className = className.replace(cls, "");
-      const variant = cls.split(":")[0];
-      const classes = cls
+  // Example lg:{bg-red-500 hover:bg-red-900}
+  const blocks = className.match(/\w*:\{(.*?)\}/g);
+
+  let plainClasses;
+  const processedClasses = blocks
+    .map((block) => {
+      plainClasses = className.replace(block, "");
+
+      const [variant, classes] = block.split(":");
+
+      const withVariants = classes
         .replace(/\{|\}/g, "")
         .replace(/\s/g, " " + variant + ":");
-      return classes.indexOf(variant) === 0 ? classes : variant + ":" + classes;
+
+      return withVariants.startsWith(variant)
+        ? withVariants
+        : variant + ":" + withVariants;
     })
     .join(" ");
-  return className.trim() + " " + result;
+  return plainClasses.trim() + " " + processedClasses;
 }
 
 export const directive = {
