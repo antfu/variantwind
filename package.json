@@ -1,0 +1,16 @@
+{
+  "name": "variantwind",
+  "version": "0.1.0",
+  "description": "Tailwind Variant Direvtive for Vue 3",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "sibbngheid",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^2.23.1"
+  }
+}
