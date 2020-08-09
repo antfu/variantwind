@@ -7,6 +7,12 @@
   "module": "dist/index.esm.js",
   "author": "sibbngheid",
   "license": "MIT",
+  "keywords": [
+    "variantwind",
+    "tailwind",
+    "tailwindcss",
+    "vue3"
+  ],
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c"
