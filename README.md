@@ -5,7 +5,7 @@
 <samp>variantwind</samp>
 </h1>
 <p align='center'>
-<strong>Most elegant</strong> way to work with <strong>TailwindCSS</strong> Variants in Vue 3
+<strong>Most elegant</strong> way to work with <strong>TailwindCSS</strong> variants in Vue 3
 </p>
 
 <p align='center'>
