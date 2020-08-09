@@ -1,18 +1,24 @@
-# Variantwind
+<p align='center'>
+<img src="./variantwind.svg">
+</p>
+<h1 align='center'>
+<samp>variantwind</samp>
+</h1>
+<p align='center'>
+<strong>Most elegant</strong> way to work with <strong>TailwindCSS</strong> Variants in Vue 3
+</p>
 
-Friendly Tailwind CSS variants in Vue 3
+<p align='center'>
+Use as <em>directive</em> or <em>binding</em>, also supports <strong>PurgeCSS</strong> 🔥🔥
+</p>
 
-- Use as Binding
-- Use as Directive
-- Supports Purge
-
-## Usage
-
-### Installation
+## Installation
 
 ```sh
 yarn add variantwind
 ```
+
+## Usage
 
 ### Directive
 
