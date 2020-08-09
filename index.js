@@ -1,4 +1,4 @@
-export function cls(className) {
+export function variantwind(className) {
   className = Array.isArray(className) ? className[0] : className;
   let result = className.match(/\w*:\{(.*?)\}/g);
   result = result
