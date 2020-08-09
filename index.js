@@ -7,7 +7,7 @@ export function variantwind(className) {
     .map((block) => {
       plainClasses = className.replace(block, "");
 
-      const [variant, classes] = block.split(":");
+      const [variant, classes] = block.split(/:(.+)/);
 
       const withVariants = classes
         .replace(/\{|\}/g, "")
