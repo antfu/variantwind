@@ -1,5 +1,5 @@
 export function variantwind(className) {
-  // Example lg:{bg-red-500 hover:bg-red-900}
+  // Array of blocks, e.g. ["lg:{bg-red-500 hover:bg-red-900}"]
   const blocks = className.match(/\w*:\{(.*?)\}/g);
 
   let plainClasses = className;
