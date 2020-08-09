@@ -16,7 +16,7 @@ export function variantwind(className) {
 
 export const directive = {
   mounted(el) {
-    el.className = cls(el.className);
+    el.className = variantwind(el.className);
   },
 };
 
@@ -25,7 +25,7 @@ export const extractor = (content) => {
     .match(/[^<]*[^>]/g)
     .map((item) => item.match(/\w*:\{(.*?)\}/g))
     .filter((item) => !!item)
-    .flatMap((classes) => cls(classes).trim().split(" "));
+    .flatMap((classes) => variantwind(classes).trim().split(" "));
 };
 
 export default (app, directiveName = "variantwind") => {
