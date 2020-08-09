@@ -1,7 +1,7 @@
 {
   "name": "variantwind",
   "version": "0.3.2",
-  "description": "Tailwind Variant Direvtive for Vue 3",
+  "description": "Tailwind Variant Directive for Vue 3",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "sibbngheid",
