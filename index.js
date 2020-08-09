@@ -28,6 +28,6 @@ export const extractor = (content) => {
     .flatMap((classes) => cls(classes).trim().split(" "));
 };
 
-export default (app, directiveName) => {
+export default (app, directiveName = "variantwind") => {
   app.directive(directiveName, directive);
 };

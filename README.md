@@ -23,7 +23,7 @@ import { directive } from "variantwind";
 
 let app = createApp(App);
 
-app.directive("class", directive);
+app.directive("variantwind", directive);
 
 app.mount("#app");
 ```
@@ -47,7 +47,7 @@ app.mount("#app");
 <template>
   <div
     class="w-full bg-red-500 md:{w-1/3 bg-blue-500} lg:{w-1/4 bg-yellow-500} hover:{bg-green-500}"
-    v-class
+    v-variantwind
   >
     Hello world
   </div>
@@ -60,7 +60,7 @@ app.mount("#app");
 <template>
   <div
     :class="variantwind`w-full bg-red-500 md:{w-1/3 bg-blue-500} lg:{w-1/4 bg-yellow-500} hover:{bg-green-500}`"
-    v-class
+    v-variantwind
   >
     Hello world
   </div>
