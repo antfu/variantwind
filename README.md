@@ -52,7 +52,7 @@ app.mount("#app");
 ```html
 <template>
   <div
-    class="w-full bg-red-500 md:{w-1/3 bg-blue-500} lg:{w-1/4 bg-yellow-500} hover:{bg-green-500}"
+    class="w-full bg-red-500 md:{w-1/3 bg-blue-500} lg:{w-1/4 bg-yellow-500 hover:bg-yellow-900}"
     v-variantwind
   >
     Hello world
@@ -65,7 +65,7 @@ app.mount("#app");
 ```html
 <template>
   <div
-    :class="variantwind('w-full bg-red-500 md:{w-1/3 bg-blue-500} lg:{w-1/4 bg-yellow-500} hover:{bg-green-500}')"
+    :class="variantwind('w-full bg-red-500 md:{w-1/3 bg-blue-500} lg:{w-1/4 bg-yellow-500 hover:bg-yellow-900}')"
   >
     Hello world
   </div>
@@ -88,9 +88,17 @@ const { extractor } = require("variantwind");
 
 module.exports = {
   purge: {
-    enabled: process.env.NODE_ENV === "production",
-    content: ["./index.html", "./src/**/*.vue", "./src/**/*.js"],
-    extractors: [{ extractor, extensions: ["vue"] }],
+    content: [
+      "./index.html", 
+      "./src/**/*.vue", 
+      "./src/**/*.js"
+    ],
+    extractors: [
+      { 
+        extractor, 
+        extensions: ["vue"] 
+      }
+    ],
   },
 };
 ```
