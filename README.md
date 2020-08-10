@@ -93,12 +93,14 @@ module.exports = {
       "./src/**/*.vue", 
       "./src/**/*.js"
     ],
-    extractors: [
-      { 
-        extractor, 
-        extensions: ["vue"] 
-      }
-    ],
+    options: {
+      extractors: [
+        {
+          extractor,
+          extensions: ["vue"],
+        },
+      ],
+    },
   },
 };
 ```

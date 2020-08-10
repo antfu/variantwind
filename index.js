@@ -32,11 +32,20 @@ export const directive = {
 };
 
 export const extractor = (content) => {
-  return content
+  const ex = content
     .match(/[^<]*[^>]/g)
     .map((item) => item.match(/\w*:\{(.*?)\}/g))
     .filter((item) => !!item)
-    .flatMap((classes) => variantwind(classes).trim().split(" "));
+    .flatMap((classes) => variantwind(classes.join(" ")).trim().split(" "));
+
+  // Capture as liberally as possible, including things like `h-(screen-1.5)`
+  const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
+
+  // Capture classes within other delimiters like .block(class="w-1/2") in Pug
+  const innerMatches =
+    content.match(/[^<>"'`\s.(){}[\]#=%]*[^<>"'`\s.(){}[\]#=%:]/g) || [];
+
+  return broadMatches.concat(innerMatches, ex);
 };
 
 export default (app, directiveName = "variantwind") => {
