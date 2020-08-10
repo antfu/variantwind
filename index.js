@@ -23,7 +23,10 @@ export function variantwind(className) {
 }
 
 export const directive = {
-  mounted(el) {
+  beforeMount(el) {
+    el.className = variantwind(el.className);
+  },
+  updated(el) {
     el.className = variantwind(el.className);
   },
 };
